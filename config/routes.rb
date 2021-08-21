@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Service provider resource:
+
+  # CREATE
+  post("/insert_service_provider", { :controller => "service_providers", :action => "create" })
+          
+  # READ
+  get("/service_providers", { :controller => "service_providers", :action => "index" })
+  
+  get("/service_providers/:path_id", { :controller => "service_providers", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_service_provider/:path_id", { :controller => "service_providers", :action => "update" })
+  
+  # DELETE
+  get("/delete_service_provider/:path_id", { :controller => "service_providers", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM

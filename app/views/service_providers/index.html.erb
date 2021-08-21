@@ -1,0 +1,230 @@
+<div>
+  <div>
+    <h1>
+      List of all service providers
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new service provider
+    </h2>
+
+    <form action="/insert_service_provider" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="address_box">
+          Address
+        </label>
+
+        <input type="text" id="address_box" name="query_address">
+      </div>
+
+      <div>
+        <label for="neighborhood_id_box">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id_box" name="query_neighborhood_id">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <div>
+        <label for="availability_box">
+          Availability
+        </label>
+
+        <input type="time" id="availability_box" name="query_availability">
+      </div>
+
+      <div>
+        <label for="email_box">
+          Email
+        </label>
+
+        <input type="text" id="email_box" name="query_email">
+      </div>
+
+      <div>
+        <label for="phone_box">
+          Phone
+        </label>
+
+        <input type="text" id="phone_box" name="query_phone">
+      </div>
+
+      <div>
+        <label for="service_locations_count_box">
+          Service locations count
+        </label>
+
+        <input type="text" id="service_locations_count_box" name="query_service_locations_count">
+      </div>
+
+      <div>
+        <label for="offerings_count_box">
+          Offerings count
+        </label>
+
+        <input type="text" id="offerings_count_box" name="query_offerings_count">
+      </div>
+
+      <div>
+        <label for="reviews_count_box">
+          Reviews count
+        </label>
+
+        <input type="text" id="reviews_count_box" name="query_reviews_count">
+      </div>
+
+      <button>
+        Create service provider
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Address
+        </th>
+
+        <th>
+          Neighborhood
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Availability
+        </th>
+
+        <th>
+          Email
+        </th>
+
+        <th>
+          Phone
+        </th>
+
+        <th>
+          Service locations count
+        </th>
+
+        <th>
+          Offerings count
+        </th>
+
+        <th>
+          Reviews count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_service_providers.each do |a_service_provider| %>
+      <tr>
+        <td>
+          <%= a_service_provider.id %>
+        </td>
+
+        <td>
+          <%= a_service_provider.name %>
+        </td>
+
+        <td>
+          <%= a_service_provider.address %>
+        </td>
+
+        <td>
+          <%= a_service_provider.neighborhood_id %>
+        </td>
+
+        <td>
+          <%= a_service_provider.image %>
+        </td>
+
+        <td>
+          <%= a_service_provider.availability %>
+        </td>
+
+        <td>
+          <%= a_service_provider.email %>
+        </td>
+
+        <td>
+          <%= a_service_provider.phone %>
+        </td>
+
+        <td>
+          <%= a_service_provider.service_locations_count %>
+        </td>
+
+        <td>
+          <%= a_service_provider.offerings_count %>
+        </td>
+
+        <td>
+          <%= a_service_provider.reviews_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_service_provider.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_service_provider.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/service_providers/<%= a_service_provider.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
