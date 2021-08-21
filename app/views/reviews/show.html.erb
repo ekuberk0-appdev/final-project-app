@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Review #<%= @the_review.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/reviews">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_review/<%= @the_review.id %>">
+          Delete review
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Review
+      </dt>
+      <dd>
+        <%= @the_review.review %>
+      </dd>
+
+      <dt>
+        Service provider
+      </dt>
+      <dd>
+        <%= @the_review.service_provider_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_review.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_review.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_review.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit review
+    </h2>
+
+    <form action="/modify_review/<%= @the_review.id %>"  method="post" >
+      <div>
+        <label for="review_box">
+          Review
+        </label>
+
+        <textarea id="review_box" name="query_review"><%= @the_review.review %></textarea>
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id" value="<%= @the_review.service_provider_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_review.user_id %>">
+      </div>
+
+      <button>
+        Update review
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

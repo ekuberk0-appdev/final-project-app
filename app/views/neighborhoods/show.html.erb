@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Neighborhood #<%= @the_neighborhood.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/neighborhoods">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_neighborhood/<%= @the_neighborhood.id %>">
+          Delete neighborhood
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_neighborhood.name %>
+      </dd>
+
+      <dt>
+        Service locations count
+      </dt>
+      <dd>
+        <%= @the_neighborhood.service_locations_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_neighborhood.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_neighborhood.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit neighborhood
+    </h2>
+
+    <form action="/modify_neighborhood/<%= @the_neighborhood.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_neighborhood.name %>">
+      </div>
+
+      <div>
+        <label for="service_locations_count_box">
+          Service locations count
+        </label>
+
+        <input type="text" id="service_locations_count_box" name="query_service_locations_count" value="<%= @the_neighborhood.service_locations_count %>">
+      </div>
+
+      <button>
+        Update neighborhood
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

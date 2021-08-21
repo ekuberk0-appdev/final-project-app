@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all reviews
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new review
+    </h2>
+
+    <form action="/insert_review" method="post">
+      <div>
+        <label for="review_box">
+          Review
+        </label>
+
+        <textarea id="review_box" name="query_review" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <button>
+        Create review
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Review
+        </th>
+
+        <th>
+          Service provider
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_reviews.each do |a_review| %>
+      <tr>
+        <td>
+          <%= a_review.id %>
+        </td>
+
+        <td>
+          <%= a_review.review %>
+        </td>
+
+        <td>
+          <%= a_review.service_provider_id %>
+        </td>
+
+        <td>
+          <%= a_review.user_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_review.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_review.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/reviews/<%= a_review.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

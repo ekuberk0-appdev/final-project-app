@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Offering #<%= @the_offering.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/offerings">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_offering/<%= @the_offering.id %>">
+          Delete offering
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Service
+      </dt>
+      <dd>
+        <%= @the_offering.service_id %>
+      </dd>
+
+      <dt>
+        Service provider
+      </dt>
+      <dd>
+        <%= @the_offering.service_provider_id %>
+      </dd>
+
+      <dt>
+        Favorites count
+      </dt>
+      <dd>
+        <%= @the_offering.favorites_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offering.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offering.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit offering
+    </h2>
+
+    <form action="/modify_offering/<%= @the_offering.id %>"  method="post" >
+      <div>
+        <label for="service_id_box">
+          Service
+        </label>
+
+        <input type="text" id="service_id_box" name="query_service_id" value="<%= @the_offering.service_id %>">
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id" value="<%= @the_offering.service_provider_id %>">
+      </div>
+
+      <div>
+        <label for="favorites_count_box">
+          Favorites count
+        </label>
+
+        <input type="text" id="favorites_count_box" name="query_favorites_count" value="<%= @the_offering.favorites_count %>">
+      </div>
+
+      <button>
+        Update offering
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

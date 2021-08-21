@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all offerings
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new offering
+    </h2>
+
+    <form action="/insert_offering" method="post">
+      <div>
+        <label for="service_id_box">
+          Service
+        </label>
+
+        <input type="text" id="service_id_box" name="query_service_id">
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id">
+      </div>
+
+      <div>
+        <label for="favorites_count_box">
+          Favorites count
+        </label>
+
+        <input type="text" id="favorites_count_box" name="query_favorites_count">
+      </div>
+
+      <button>
+        Create offering
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Service
+        </th>
+
+        <th>
+          Service provider
+        </th>
+
+        <th>
+          Favorites count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_offerings.each do |an_offering| %>
+      <tr>
+        <td>
+          <%= an_offering.id %>
+        </td>
+
+        <td>
+          <%= an_offering.service_id %>
+        </td>
+
+        <td>
+          <%= an_offering.service_provider_id %>
+        </td>
+
+        <td>
+          <%= an_offering.favorites_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_offering.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_offering.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/offerings/<%= an_offering.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

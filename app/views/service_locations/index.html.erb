@@ -1,0 +1,102 @@
+<div>
+  <div>
+    <h1>
+      List of all service locations
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new service location
+    </h2>
+
+    <form action="/insert_service_location" method="post">
+      <div>
+        <label for="neighborhood_id_box">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id_box" name="query_neighborhood_id">
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id">
+      </div>
+
+      <button>
+        Create service location
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Neighborhood
+        </th>
+
+        <th>
+          Service provider
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_service_locations.each do |a_service_location| %>
+      <tr>
+        <td>
+          <%= a_service_location.id %>
+        </td>
+
+        <td>
+          <%= a_service_location.neighborhood_id %>
+        </td>
+
+        <td>
+          <%= a_service_location.service_provider_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_service_location.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_service_location.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/service_locations/<%= a_service_location.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

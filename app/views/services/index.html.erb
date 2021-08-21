@@ -1,0 +1,102 @@
+<div>
+  <div>
+    <h1>
+      List of all services
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new service
+    </h2>
+
+    <form action="/insert_service" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="offerings_count_box">
+          Offerings count
+        </label>
+
+        <input type="text" id="offerings_count_box" name="query_offerings_count">
+      </div>
+
+      <button>
+        Create service
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Offerings count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_services.each do |a_service| %>
+      <tr>
+        <td>
+          <%= a_service.id %>
+        </td>
+
+        <td>
+          <%= a_service.name %>
+        </td>
+
+        <td>
+          <%= a_service.offerings_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_service.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_service.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/services/<%= a_service.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

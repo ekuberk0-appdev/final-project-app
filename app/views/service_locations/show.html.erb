@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Service location #<%= @the_service_location.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/service_locations">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_service_location/<%= @the_service_location.id %>">
+          Delete service location
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Neighborhood
+      </dt>
+      <dd>
+        <%= @the_service_location.neighborhood_id %>
+      </dd>
+
+      <dt>
+        Service provider
+      </dt>
+      <dd>
+        <%= @the_service_location.service_provider_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_service_location.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_service_location.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit service location
+    </h2>
+
+    <form action="/modify_service_location/<%= @the_service_location.id %>"  method="post" >
+      <div>
+        <label for="neighborhood_id_box">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id_box" name="query_neighborhood_id" value="<%= @the_service_location.neighborhood_id %>">
+      </div>
+
+      <div>
+        <label for="service_provider_id_box">
+          Service provider
+        </label>
+
+        <input type="text" id="service_provider_id_box" name="query_service_provider_id" value="<%= @the_service_location.service_provider_id %>">
+      </div>
+
+      <button>
+        Update service location
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
