@@ -9,4 +9,11 @@
 #  updated_at              :datetime         not null
 #
 class Neighborhood < ApplicationRecord
+
+  has_many(:service_locations, { :class_name => "ServiceLocation", :foreign_key => "neighborhood_id", :dependent => :nullify })
+
+  has_many(:service_providers, { :through => :service_locations, :source => :service_provider })
+
+  
+
 end
