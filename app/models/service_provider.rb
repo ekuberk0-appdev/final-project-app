@@ -17,4 +17,20 @@
 #  neighborhood_id         :integer
 #
 class ServiceProvider < ApplicationRecord
+  validates(:name, { :presence => true })
+  validates(:name, { :uniqueness => { :scope => ["neighborhood_id"], :message => "already exists" } })
+
+  has_many(:service_locations, { :class_name => "ServiceLocation", :foreign_key => "service_provider_id", :dependent => :nullify })
+
+  has_many(:offerings, { :class_name => "Offering", :foreign_key => "service_provider_id", :dependent => :nullify })
+
+  has_many(:reviews, { :class_name => "Review", :foreign_key => "service_provider_id", :dependent => :destroy })
+
+  has_many(:users, { :through => :reviews, :source => :user })
+
+  has_many(:services, { :through => :offerings, :source => :service })
+
+  has_many(:neighborhoods, { :through => :service_locations, :source => :neighborhood })
+
+
 end
