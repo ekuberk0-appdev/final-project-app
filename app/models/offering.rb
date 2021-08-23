@@ -3,6 +3,7 @@
 # Table name: offerings
 #
 #  id                  :integer          not null, primary key
+#  availability        :datetime
 #  favorites_count     :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null

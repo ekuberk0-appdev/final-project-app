@@ -2,14 +2,10 @@ desc "Hydrate the database with some sample data to look at so that developing i
 
 task({ :sample_data => :environment }) do
 
-  #  id              :integer          not null, primary key
 #  email           :string
-#  favorites_count :integer
 #  password_digest :string
-#  reviews_count   :integer
 #  username        :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+
 require 'faker'
 10.times do 
 u = User.new 
@@ -39,10 +35,16 @@ neighborhoods = Neighborhood.all
 
 
 10.times do
-  service_provider = ServiceProvider.new
+service_provider = ServiceProvider.new
 service_provider.neighborhood_id = neighborhoods.sample.id
-
-
+service_provider.address = Faker::Address.full_address
+service_provider.availability = Faker::Date.in_date_period
+service_provider.name = Faker::Name.name
+service_provider.email = "#{Faker::Name.first_name}@email.com"
+service_provider.phone = Faker::PhoneNumber.cell_phone
+service_provider.save
 end
+service_providers = ServiceProvider.all
+
 
 end
