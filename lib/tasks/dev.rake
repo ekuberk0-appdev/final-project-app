@@ -2,7 +2,14 @@ desc "Hydrate the database with some sample data to look at so that developing i
 
 task({ :sample_data => :environment }) do
 
-
+User.destroy_all
+Service.destroy_all
+ServiceLocation.destroy_all
+Review.destroy_all
+Offering.destroy_all
+Neighborhood.destroy_all
+Favorite.destroy_all
+Favorite.destroy_all
 
 
   #  email           :string
@@ -111,7 +118,6 @@ offerings = Offering.all
 
 10.times do 
 favorite = Favorite.new
-favorite.image = service_providers.sample.image
 favorite.notes = Faker::Quotes::Shakespeare.hamlet_quote
 favorite.offering_id = offerings.sample.id
 favorite.user_id = users.sample.id
