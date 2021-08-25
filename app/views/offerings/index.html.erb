@@ -8,45 +8,7 @@
 
 <hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new offering
-    </h2>
 
-    <form action="/insert_offering" method="post">
-      <div>
-        <label for="service_id_box">
-          Service
-        </label>
-
-        <input type="text" id="service_id_box" name="query_service_id">
-      </div>
-
-      <div>
-        <label for="service_provider_id_box">
-          Service provider
-        </label>
-
-        <input type="text" id="service_provider_id_box" name="query_service_provider_id">
-      </div>
-
-      <div>
-        <label for="favorites_count_box">
-          Favorites count
-        </label>
-
-        <input type="text" id="favorites_count_box" name="query_favorites_count">
-      </div>
-
-      <button>
-        Create offering
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
 <div>
   <div>
     <table>
@@ -89,11 +51,11 @@
         </td>
 
         <td>
-          <%= an_offering.service_id %>
+          <%= an_offering.service.name %>
         </td>
 
         <td>
-          <%= an_offering.service_provider_id %>
+          <%= an_offering.service_provider.name %>
         </td>
 <td> 
 <%= an_offering.availability %>

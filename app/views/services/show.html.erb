@@ -11,11 +11,7 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_service/<%= @the_service.id %>">
-          Delete service
-        </a>
-      </div>
+      
     </div>
 
     <dl>
@@ -53,34 +49,3 @@
 <hr>
 
 
-<div>
-  <div>
-    <h2>
-      Edit service
-    </h2>
-
-    <form action="/modify_service/<%= @the_service.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_service.name %>">
-      </div>
-
-      <div>
-        <label for="offerings_count_box">
-          Offerings count
-        </label>
-
-        <input type="text" id="offerings_count_box" name="query_offerings_count" value="<%= @the_service.offerings_count %>">
-      </div>
-
-      <button>
-        Update service
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>

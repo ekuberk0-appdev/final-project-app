@@ -11,11 +11,7 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_offering/<%= @the_offering.id %>">
-          Delete offering
-        </a>
-      </div>
+      
     </div>
 
     <dl>
@@ -23,14 +19,14 @@
         Service
       </dt>
       <dd>
-        <%= @the_offering.service_id %>
+        <%= @the_offering.service.name %>
       </dd>
 
       <dt>
         Service provider
       </dt>
       <dd>
-        <%= @the_offering.service_provider_id %>
+        <%= @the_offering.service_provider.name %>
       </dd>
 
       <dt>
@@ -60,42 +56,6 @@
 <hr>
 
 
-<div>
-  <div>
-    <h2>
-      Edit offering
-    </h2>
 
-    <form action="/modify_offering/<%= @the_offering.id %>"  method="post" >
-      <div>
-        <label for="service_id_box">
-          Service
-        </label>
 
-        <input type="text" id="service_id_box" name="query_service_id" value="<%= @the_offering.service_id %>">
-      </div>
 
-      <div>
-        <label for="service_provider_id_box">
-          Service provider
-        </label>
-
-        <input type="text" id="service_provider_id_box" name="query_service_provider_id" value="<%= @the_offering.service_provider_id %>">
-      </div>
-
-      <div>
-        <label for="favorites_count_box">
-          Favorites count
-        </label>
-
-        <input type="text" id="favorites_count_box" name="query_favorites_count" value="<%= @the_offering.favorites_count %>">
-      </div>
-
-      <button>
-        Update offering
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>

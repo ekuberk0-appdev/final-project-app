@@ -11,11 +11,7 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_neighborhood/<%= @the_neighborhood.id %>">
-          Delete neighborhood
-        </a>
-      </div>
+      
     </div>
 
     <dl>
@@ -53,34 +49,4 @@
 <hr>
 
 
-<div>
-  <div>
-    <h2>
-      Edit neighborhood
-    </h2>
 
-    <form action="/modify_neighborhood/<%= @the_neighborhood.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_neighborhood.name %>">
-      </div>
-
-      <div>
-        <label for="service_locations_count_box">
-          Service locations count
-        </label>
-
-        <input type="text" id="service_locations_count_box" name="query_service_locations_count" value="<%= @the_neighborhood.service_locations_count %>">
-      </div>
-
-      <button>
-        Update neighborhood
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
