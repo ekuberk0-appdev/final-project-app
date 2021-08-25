@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Service provider #<%= @the_service_provider.id %> details
+       <%= @the_service_provider.name %> details
     </h1>
 
     <div>
@@ -11,11 +11,7 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_service_provider/<%= @the_service_provider.id %>">
-          Delete service provider
-        </a>
-      </div>
+
     </div>
 
     <dl>
@@ -44,7 +40,6 @@
         Image
       </dt>
       <dd>
-
           <img src="<%= @the_service_provider.image %>">
       </dd>
 
@@ -110,98 +105,3 @@
 <hr>
 
 
-<div>
-  <div>
-    <h2>
-      Edit service provider
-    </h2>
-
-    <form action="/modify_service_provider/<%= @the_service_provider.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_service_provider.name %>">
-      </div>
-
-      <div>
-        <label for="address_box">
-          Address
-        </label>
-
-        <input type="text" id="address_box" name="query_address" value="<%= @the_service_provider.address %>">
-      </div>
-
-      <div>
-        <label for="neighborhood_id_box">
-          Neighborhood
-        </label>
-
-        <input type="text" id="neighborhood_id_box" name="query_neighborhood_id" value="<%= @the_service_provider.neighborhood_id %>">
-      </div>
-
-      <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image" value="<%= @the_service_provider.image %>">
-      </div>
-
-      <div>
-        <label for="availability_box">
-          Availability
-        </label>
-
-        <input type="time" id="availability_box" name="query_availability" value="<%= @the_service_provider.availability %>">
-      </div>
-
-      <div>
-        <label for="email_box">
-          Email
-        </label>
-
-        <input type="text" id="email_box" name="query_email" value="<%= @the_service_provider.email %>">
-      </div>
-
-      <div>
-        <label for="phone_box">
-          Phone
-        </label>
-
-        <input type="text" id="phone_box" name="query_phone" value="<%= @the_service_provider.phone %>">
-      </div>
-
-      <div>
-        <label for="service_locations_count_box">
-          Service locations count
-        </label>
-
-        <input type="text" id="service_locations_count_box" name="query_service_locations_count" value="<%= @the_service_provider.service_locations_count %>">
-      </div>
-
-      <div>
-        <label for="offerings_count_box">
-          Offerings count
-        </label>
-
-        <input type="text" id="offerings_count_box" name="query_offerings_count" value="<%= @the_service_provider.offerings_count %>">
-      </div>
-
-      <div>
-        <label for="reviews_count_box">
-          Reviews count
-        </label>
-
-        <input type="text" id="reviews_count_box" name="query_reviews_count" value="<%= @the_service_provider.reviews_count %>">
-      </div>
-
-      <button>
-        Update service provider
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>

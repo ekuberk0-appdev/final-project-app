@@ -14,17 +14,17 @@ get("/", { :controller => "application", :action => "index" })
   
   # UPDATE
   
-  post("/modify_service_location/:path_id", { :controller => "service_locations", :action => "update" })
+  #post("/modify_service_location/:path_id", { :controller => "service_locations", :action => "update" })
   
   # DELETE
-  get("/delete_service_location/:path_id", { :controller => "service_locations", :action => "destroy" })
+  #get("/delete_service_location/:path_id", { :controller => "service_locations", :action => "destroy" })
 
   #------------------------------
 
   # Routes for the Offering resource:
 
   # CREATE
-  post("/insert_offering", { :controller => "offerings", :action => "create" })
+  #post("/insert_offering", { :controller => "offerings", :action => "create" })
           
   # READ
   get("/offerings", { :controller => "offerings", :action => "index" })
@@ -33,10 +33,10 @@ get("/", { :controller => "application", :action => "index" })
   
   # UPDATE
   
-  post("/modify_offering/:path_id", { :controller => "offerings", :action => "update" })
+  #post("/modify_offering/:path_id", { :controller => "offerings", :action => "update" })
   
   # DELETE
-  get("/delete_offering/:path_id", { :controller => "offerings", :action => "destroy" })
+  #get("/delete_offering/:path_id", { :controller => "offerings", :action => "destroy" })
 
   #------------------------------
 
@@ -62,7 +62,7 @@ get("/", { :controller => "application", :action => "index" })
   # Routes for the Neighborhood resource:
 
   # CREATE
-  post("/insert_neighborhood", { :controller => "neighborhoods", :action => "create" })
+  #post("/insert_neighborhood", { :controller => "neighborhoods", :action => "create" })
           
   # READ
   get("/neighborhoods", { :controller => "neighborhoods", :action => "index" })
@@ -71,10 +71,10 @@ get("/", { :controller => "application", :action => "index" })
   
   # UPDATE
   
-  post("/modify_neighborhood/:path_id", { :controller => "neighborhoods", :action => "update" })
+  #post("/modify_neighborhood/:path_id", { :controller => "neighborhoods", :action => "update" })
   
   # DELETE
-  get("/delete_neighborhood/:path_id", { :controller => "neighborhoods", :action => "destroy" })
+  #get("/delete_neighborhood/:path_id", { :controller => "neighborhoods", :action => "destroy" })
 
   #------------------------------
 
@@ -100,7 +100,7 @@ get("/", { :controller => "application", :action => "index" })
   # Routes for the Service resource:
 
   # CREATE
-  post("/insert_service", { :controller => "services", :action => "create" })
+  #post("/insert_service", { :controller => "services", :action => "create" })
           
   # READ
   get("/services", { :controller => "services", :action => "index" })
@@ -109,17 +109,17 @@ get("/", { :controller => "application", :action => "index" })
   
   # UPDATE
   
-  post("/modify_service/:path_id", { :controller => "services", :action => "update" })
+  #post("/modify_service/:path_id", { :controller => "services", :action => "update" })
   
   # DELETE
-  get("/delete_service/:path_id", { :controller => "services", :action => "destroy" })
+  #get("/delete_service/:path_id", { :controller => "services", :action => "destroy" })
 
   #------------------------------
 
   # Routes for the Service provider resource:
 
   # CREATE
-  post("/insert_service_provider", { :controller => "service_providers", :action => "create" })
+  #post("/insert_service_provider", { :controller => "service_providers", :action => "create" })
           
   # READ
   get("/service_providers", { :controller => "service_providers", :action => "index" })
@@ -128,10 +128,10 @@ get("/", { :controller => "application", :action => "index" })
   
   # UPDATE
   
-  post("/modify_service_provider/:path_id", { :controller => "service_providers", :action => "update" })
+  #post("/modify_service_provider/:path_id", { :controller => "service_providers", :action => "update" })
   
   # DELETE
-  get("/delete_service_provider/:path_id", { :controller => "service_providers", :action => "destroy" })
+  #get("/delete_service_provider/:path_id", { :controller => "service_providers", :action => "destroy" })
 
   #------------------------------
 
