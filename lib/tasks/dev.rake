@@ -47,4 +47,41 @@ end
 service_providers = ServiceProvider.all
 
 
+
+#  review              :text
+#  service_provider_id :integer
+#  user_id             :integer
+
+10.times do 
+review = Review.new
+review.service_provider_id = service_providers.sample.id
+review.user_id = users.sample.id
+review.save 
+end 
+reviews = Review.all
+
+
+#  neighborhood_id     :integer
+#  service_provider_id :integer
+
+10.times do 
+  service_location = ServiceLocation.new
+  service_location.neighborhood_id = neighborhoods.sample.id
+  service_location.service_provider_id = service_providers.sample.id
+  service_location.save
 end
+service_locations = ServiceLocation.all
+
+#  name            :string
+
+services = ["Hourly Babysitting","Weekend Babysitting", "Daytime Babysitting"]
+
+10.times do 
+  service = Service.new
+  service.name = services.sample
+  service.save 
+end 
+services = Service.all
+
+
+end 
