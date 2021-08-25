@@ -85,7 +85,7 @@ service_locations = ServiceLocation.all
 
 #  name            :string
 
-services = ["Hourly Babysitting","Weekend Babysitting", "Daytime Babysitting"]
+services = ["Hourly Babysitting","Weekend Babysitting", "Daytime Babysitting", "Evening Babysitting"]
 
 10.times do 
   service = Service.new
