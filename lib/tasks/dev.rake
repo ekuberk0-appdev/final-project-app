@@ -84,4 +84,18 @@ end
 services = Service.all
 
 
+
+#  availability        :datetime
+#  service_id          :integer
+#  service_provider_id :integer
+
+10.times do 
+offering = Offering.new
+offering.availability = Faker::Date.in_date_period
+offering.service_id = services.sample.id
+offering.service_provider_id = service_providers.sample.id
+offering.save
+end
+offerings = Offering.all
+
 end 
