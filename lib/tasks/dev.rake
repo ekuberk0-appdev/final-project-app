@@ -2,7 +2,10 @@ desc "Hydrate the database with some sample data to look at so that developing i
 
 task({ :sample_data => :environment }) do
 
-#  email           :string
+
+
+
+  #  email           :string
 #  password_digest :string
 #  username        :string
 
@@ -42,6 +45,7 @@ service_provider.availability = Faker::Date.in_date_period
 service_provider.name = Faker::Name.name
 service_provider.email = "#{Faker::Name.first_name}@email.com"
 service_provider.phone = Faker::PhoneNumber.cell_phone
+service_provider.image = Faker::Avatar.image
 service_provider.save
 end
 service_providers = ServiceProvider.all
@@ -97,5 +101,23 @@ offering.service_provider_id = service_providers.sample.id
 offering.save
 end
 offerings = Offering.all
+
+
+
+#  image       :string
+#  notes       :text
+#  offering_id :integer
+#  user_id     :integer
+
+10.times do 
+favorite = Favorite.new
+favorite.image = service_providers.sample.image
+favorite.notes = Faker::Quotes::Shakespeare.hamlet_quote
+favorite.offering_id = offerings.sample.id
+favorite.user_id = users.sample.id
+favorite.save
+end 
+favorites = Favorite.all
+
 
 end 
