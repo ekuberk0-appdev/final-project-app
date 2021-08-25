@@ -5,7 +5,7 @@ get("/", { :controller => "application", :action => "index" })
   # Routes for the Service location resource:
 
   # CREATE
-  post("/insert_service_location", { :controller => "service_locations", :action => "create" })
+  #post("/insert_service_location", { :controller => "service_locations", :action => "create" })
           
   # READ
   get("/service_locations", { :controller => "service_locations", :action => "index" })

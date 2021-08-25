@@ -10,6 +10,7 @@ Offering.destroy_all
 Neighborhood.destroy_all
 Favorite.destroy_all
 Favorite.destroy_all
+ServiceProvider.destroy_all
 
 
   #  email           :string
