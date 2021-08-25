@@ -66,6 +66,7 @@ service_providers = ServiceProvider.all
 
 10.times do 
 review = Review.new
+review.review = Faker::Quotes::Shakespeare.romeo_and_juliet_quote 
 review.service_provider_id = service_providers.sample.id
 review.user_id = users.sample.id
 review.save 
