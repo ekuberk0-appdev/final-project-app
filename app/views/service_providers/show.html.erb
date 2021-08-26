@@ -33,7 +33,7 @@
         Neighborhood
       </dt>
       <dd>
-        <%= @the_service_provider.neighborhood_id %>
+        <%= @the_service_provider.neighborhoods.pluck(:name).to_sentence %>
       </dd>
 
       <dt>

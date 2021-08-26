@@ -16,11 +16,9 @@
 
     <form action="/insert_favorite" method="post">
       <div>
-        <label for="user_id_box">
-          User
-        </label>
+     
 
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="hidden" id="user_id_box" name="query_user_id" value=<%=@current_user.id%>>
       </div>
 
       <div>
@@ -31,21 +29,22 @@
         <textarea id="notes_box" name="query_notes" rows="3"></textarea>
       </div>
 
-      <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image">
-      </div>
+   
 
       <div>
         <label for="offering_id_box">
           Offering
         </label>
 
-        <input type="text" id="offering_id_box" name="query_offering_id">
-      </div>
+      
+
+<select name="query_offering_id" id="offering_id_box">
+  <% Offering.all.each do |off|%>
+  <option value="<%=off.id%>""><%= off.service.name %> by <%= off.service_provider.name%></option>
+  
+  <%end%>
+</select>
+       
 
       <button>
         Create favorite
@@ -59,70 +58,36 @@
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          User
-        </th>
-
+     
         <th>
           Notes
-        </th>
-
-        <th>
-          Image
         </th>
 
         <th>
           Offering
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
+        
+        
       </tr>
 
       <% @list_of_favorites.each do |a_favorite| %>
       <tr>
-        <td>
-          <%= a_favorite.id %>
-        </td>
-
-        <td>
-          <%= a_favorite.user_id %>
-        </td>
+      
 
         <td>
           <%= a_favorite.notes %>
         </td>
 
+        
+
         <td>
-          <%= a_favorite.image %>
+          <%= a_favorite.offering.service.name %> by <%= a_favorite.offering.service_provider.name%>
         </td>
 
         <td>
-          <%= a_favorite.offering.service.name %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_favorite.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_favorite.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/favorites/<%= a_favorite.id %>">
-            Show details
+          <a href=/service_providers/<%= a_favorite.offering.service_provider.id %>">
+            <%= a_favorite.offering.service_provider.name %>
           </a>
         </td>
       </tr>

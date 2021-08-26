@@ -27,7 +27,7 @@
         </th>
 
         <th>
-          Neighborhood
+          Neighborhoods
         </th>
 
         <th>
@@ -85,7 +85,7 @@
         </td>
 
         <td>
-          <%= a_service_provider.neighborhood_id %>
+          <%= a_service_provider.neighborhoods.pluck(:name).to_sentence %>
         </td>
 
         <td>

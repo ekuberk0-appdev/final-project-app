@@ -25,7 +25,8 @@ u.password = "password"
 u.username = Faker::Name.first_name
 u.save 
 end 
-p User.count 
+
+p User.first.email
 
 users = User.all
 
@@ -77,11 +78,13 @@ reviews = Review.all
 #  neighborhood_id     :integer
 #  service_provider_id :integer
 
-10.times do 
+ServiceProvider.all.each do |provider|
+rand(1..5).times do 
   service_location = ServiceLocation.new
   service_location.neighborhood_id = neighborhoods.sample.id
-  service_location.service_provider_id = service_providers.sample.id
+  service_location.service_provider_id = provider.id
   service_location.save
+end
 end
 service_locations = ServiceLocation.all
 
@@ -118,14 +121,17 @@ offerings = Offering.all
 #  offering_id :integer
 #  user_id     :integer
 
-10.times do 
+User.all.each do |user|
+rand(1..3).times do 
 favorite = Favorite.new
 favorite.notes = Faker::Quotes::Shakespeare.hamlet_quote
 favorite.offering_id = offerings.sample.id
-favorite.user_id = users.sample.id
+favorite.user_id = user.id
 favorite.save
 end 
+end
 favorites = Favorite.all
+
 
 
 end 

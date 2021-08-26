@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    matching_favorites = Favorite.all
+    matching_favorites = Favorite.where(:user_id => @current_user.id)
 
     @list_of_favorites = matching_favorites.order({ :created_at => :desc })
 
@@ -21,7 +21,7 @@ class FavoritesController < ApplicationController
     the_favorite = Favorite.new
     the_favorite.user_id = params.fetch("query_user_id")
     the_favorite.notes = params.fetch("query_notes")
-    the_favorite.image = params.fetch("query_image")
+    the_favorite.image = params.fetch("query_image", "")
     the_favorite.offering_id = params.fetch("query_offering_id")
 
     if the_favorite.valid?
