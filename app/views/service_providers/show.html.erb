@@ -97,5 +97,30 @@
 </div>
 
 <hr>
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new review for <%= @the_service_provider.name %>
+    </h2>
+
+    <form action="/insert_review" method="post">
+      <div>
+        <label for="review_box">
+          Review
+        </label>
+
+        <textarea id="review_box" name="query_review" rows="1"></textarea>
+      </div>
+
+
+
+      <button>
+        Create review
+      </button>
+    </form>
+  </div>
+</div>
 
 
