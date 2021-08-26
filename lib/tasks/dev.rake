@@ -65,12 +65,14 @@ service_providers = ServiceProvider.all
 #  service_provider_id :integer
 #  user_id             :integer
 
-10.times do 
+ServiceProvider.all.each do |provider|
+  rand(1..5).times do
 review = Review.new
 review.review = Faker::Quotes::Shakespeare.romeo_and_juliet_quote 
 review.service_provider_id = service_providers.sample.id
 review.user_id = users.sample.id
 review.save 
+end 
 end 
 reviews = Review.all
 
@@ -105,12 +107,15 @@ services = Service.all
 #  service_id          :integer
 #  service_provider_id :integer
 
-10.times do 
+#10.times do 
+ServiceProvider.all.each do |provider|
+  rand(1..5).times do
 offering = Offering.new
 offering.availability = Faker::Date.in_date_period
 offering.service_id = services.sample.id
 offering.service_provider_id = service_providers.sample.id
 offering.save
+end
 end
 offerings = Offering.all
 

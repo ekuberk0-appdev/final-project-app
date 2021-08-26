@@ -105,16 +105,16 @@
       Add a new review for <%= @the_service_provider.name %>
     </h2>
 
-    <form action="/insert_review" method="post">
+    <form action="/insert_review" method="post" >
       <div>
         <label for="review_box">
           Review
         </label>
 
-        <textarea id="review_box" name="query_review" rows="1"></textarea>
+        <textarea id="review_box" name="query_review" rows="3"></textarea>
       </div>
 
-
+<input type="hidden" id="service_provider_id_box" name="query_service_provider_id" value="<%= @the_service_provider.id %>">
 
       <button>
         Create review
