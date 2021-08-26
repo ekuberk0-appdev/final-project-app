@@ -30,7 +30,7 @@
       </dd>
 
       <dt>
-        Neighborhood
+        Neighborhoods
       </dt>
       <dd>
         <%= @the_service_provider.neighborhoods.pluck(:name).to_sentence %>
@@ -78,6 +78,7 @@
         <%= @the_service_provider.offerings %>
       </dd>
 
+
       <dt>
         Reviews
       </dt>
@@ -85,19 +86,7 @@
         <%= @the_service_provider.reviews %>
       </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_service_provider.created_at) %> ago
-      </dd>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_service_provider.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>

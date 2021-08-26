@@ -14,9 +14,7 @@
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
+        
 
         <th>
           Name
@@ -34,9 +32,7 @@
           Image
         </th>
 
-        <th>
-          Availability
-        </th>
+
 
         <th>
           Email
@@ -47,24 +43,17 @@
         </th>
 
         <th>
-          Service locations count
+          Service locations
         </th>
 
         <th>
-          Offerings count
+          Offerings
         </th>
 
         <th>
-          Reviews count
+          Reviews
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
 
         <th>
         </th>
@@ -72,9 +61,7 @@
 
       <% @list_of_service_providers.each do |a_service_provider| %>
       <tr>
-        <td>
-          <%= a_service_provider.id %>
-        </td>
+
 
         <td>
           <%= a_service_provider.name %>
@@ -93,9 +80,7 @@
           <img src="<%= a_service_provider.image %>">
         </td>
 
-        <td>
-          <%= a_service_provider.availability %>
-        </td>
+
 
         <td>
           <%= a_service_provider.email %>
@@ -117,12 +102,7 @@
           <%= a_service_provider.reviews_count %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(a_service_provider.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_service_provider.updated_at) %> ago
-        </td>
+
 
         <td>
           <a href="/service_providers/<%= a_service_provider.id %>">
