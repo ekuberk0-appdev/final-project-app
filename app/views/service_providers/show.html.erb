@@ -43,12 +43,7 @@
           <img src="<%= @the_service_provider.image %>">
       </dd>
 
-      <dt>
-        Availability
-      </dt>
-      <dd>
-        <%= @the_service_provider.availability %>
-      </dd>
+
 
       <dt>
         Email
@@ -75,7 +70,12 @@
         Offerings
       </dt>
       <dd>
-        <%= @the_service_provider.services.pluck(:name).to_sentence %>
+        <%#= @the_service_provider.services.pluck(:name).to_sentence %>
+        <ul>
+          <% @the_service_provider.offerings.each do |offering| %>
+           <li>  <%= offering.service.name %> on <%= offering.availability.strftime("%A, %d %b %Y %l:%M %p") %> </li>
+          <% end %>
+        </ul>
       </dd>
 
 
@@ -83,7 +83,12 @@
         Reviews
       </dt>
       <dd>
-        <%= @the_service_provider.reviews.pluck(:review).to_sentence %>
+        <%#= @the_service_provider.reviews.pluck(:review).to_sentence %>
+        <ul>
+          <% @the_service_provider.reviews.each do |review| %>
+           <li>  <%= review.review %> </li>
+          <% end %>
+        </ul>
       </dd>
 
 

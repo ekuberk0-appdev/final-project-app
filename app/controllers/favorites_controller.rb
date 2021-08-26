@@ -36,10 +36,10 @@ class FavoritesController < ApplicationController
     the_id = params.fetch("path_id")
     the_favorite = Favorite.where({ :id => the_id }).at(0)
 
-    the_favorite.user_id = params.fetch("query_user_id")
+    #the_favorite.user_id = params.fetch("query_user_id")
     the_favorite.notes = params.fetch("query_notes")
 
-    the_favorite.offering_id = params.fetch("query_offering_id")
+    #the_favorite.offering_id = params.fetch("query_offering_id")
 
     if the_favorite.valid?
       the_favorite.save
