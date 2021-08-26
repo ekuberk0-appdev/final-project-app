@@ -68,14 +68,14 @@
         Service locations
       </dt>
       <dd>
-        <%= @the_service_provider.service_locations %>
+        <%= @the_service_provider.neighborhoods.pluck(:name).to_sentence %>
       </dd>
 
       <dt>
         Offerings
       </dt>
       <dd>
-        <%= @the_service_provider.offerings %>
+        <%= @the_service_provider.services.pluck(:name).to_sentence %>
       </dd>
 
 
@@ -83,7 +83,7 @@
         Reviews
       </dt>
       <dd>
-        <%= @the_service_provider.reviews %>
+        <%= @the_service_provider.reviews.pluck(:review).to_sentence %>
       </dd>
 
 
