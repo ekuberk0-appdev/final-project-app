@@ -21,13 +21,7 @@
         <input type="hidden" id="user_id_box" name="query_user_id" value=<%=@current_user.id%>>
       </div>
 
-      <div>
-        <label for="notes_box">
-          Notes
-        </label>
 
-        <textarea id="notes_box" name="query_notes" rows="3"></textarea>
-      </div>
 
    
 
@@ -44,7 +38,13 @@
   
   <%end%>
 </select>
-       
+         <div>
+        <label for="notes_box">
+          Notes
+        </label>
+
+        <textarea id="notes_box" name="query_notes" rows="3"></textarea>
+      </div>    
 
       <button>
         Create favorite
