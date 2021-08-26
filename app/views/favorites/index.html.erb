@@ -59,15 +59,19 @@
     <table>
       <tr>
      
-        <th>
-          Notes
-        </th>
+
 
         <th>
           Offering
         </th>
 
-        
+        <th>
+          Notes
+        </th>
+
+                <th>
+          Service Provider
+        </th>
         
       </tr>
 
@@ -76,18 +80,26 @@
       
 
         <td>
+          <%= a_favorite.offering.service.name %> by <%= a_favorite.offering.service_provider.name%>
+        </td>
+
+        <td>
           <%= a_favorite.notes %>
         </td>
 
         
 
-        <td>
-          <%= a_favorite.offering.service.name %> by <%= a_favorite.offering.service_provider.name%>
-        </td>
+
 
         <td>
           <a href=/service_providers/<%= a_favorite.offering.service_provider.id %>">
             <%= a_favorite.offering.service_provider.name %>
+          </a>
+        </td>
+
+                <td>
+          <a href="/favorites/<%= a_favorite.id %>">
+            Show details
           </a>
         </td>
       </tr>

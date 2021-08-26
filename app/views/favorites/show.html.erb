@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Favorite #<%= @the_favorite.id %> details
+      <%= @the_favorite.offering.service.name %> by <%= @the_favorite.offering.service_provider.name %> details
     </h1>
 
     <div>
@@ -20,11 +20,7 @@
 
     <dl>
       <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_favorite.user_id %>
-      </dd>
+
 
       <dt>
         Notes
@@ -33,18 +29,13 @@
         <%= @the_favorite.notes %>
       </dd>
 
-      <dt>
-        Image
-      </dt>
-      <dd>
-        <%= @the_favorite.image %>
-      </dd>
+
 
       <dt>
         Offering
       </dt>
       <dd>
-        <%= @the_favorite.offering_id %>
+        <%= @the_favorite.offering.service.name %> by <%= @the_favorite.offering.service_provider.name %>
       </dd>
 
       <dt>
@@ -73,14 +64,8 @@
       Edit favorite
     </h2>
 
-    <form action="/modify_favorite/<%= @the_favorite.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
 
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_favorite.user_id %>">
-      </div>
+
 
       <div>
         <label for="notes_box">
@@ -90,24 +75,12 @@
         <textarea id="notes_box" name="query_notes"><%= @the_favorite.notes %></textarea>
       </div>
 
-      <div>
-        <label for="image_box">
-          Image
-        </label>
 
-        <input type="text" id="image_box" name="query_image" value="<%= @the_favorite.image %>">
-      </div>
 
-      <div>
-        <label for="offering_id_box">
-          Offering
-        </label>
 
-        <input type="text" id="offering_id_box" name="query_offering_id" value="<%= @the_favorite.offering_id %>">
-      </div>
 
       <button>
-        Update favorite
+        Update notes
       </button>
     </form>
   </div>
